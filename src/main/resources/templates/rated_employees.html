@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head> 
+    <title>Rated Employees</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Top rated employees</h1>
+<table border=2px>
+<tr>
+	<th>Name</th>
+	<th>Email</th>
+	<th>Contact</th>
+	<th>Rating</th>
+</tr>
+    <div th:each="emp : ${top5employees}">
+    	<tr>
+    		<td><span th:text="${emp.name}">Name</span></td>
+    		<td><span th:text="${emp.email}">Email</span></td>
+    		<td><span th:text="${emp.contact}">Contact</span></td>
+    		<td><span th:text="${emp.rating}">Rating</span></td>
+    	</tr>
+    </div>
+</table>
+<button><a href="/add">Add Employee</a></button>
+</body>
+</html>
